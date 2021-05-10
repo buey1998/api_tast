@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_test/calculator.dart';
 import 'package:flutter_application_test/listName.dart';
+import 'package:flutter_application_test/todoList.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,6 +49,28 @@ class _ListTodoState extends State<ListTodo> {
                 width: double.infinity,
                 height: 80,
                 color: Colors.amber,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('To do List'),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(Icons.list),
+                    )
+                  ],
+                ),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TodoList()));
+              },
+            ),
+            Divider(),
+            GestureDetector(
+              child: Container(
+                width: double.infinity,
+                height: 80,
+                color: Colors.amberAccent,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
